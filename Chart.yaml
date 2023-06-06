@@ -1,0 +1,12 @@
+apiVersion: v2
+name: my-app
+version: 1.0.0
+description: My Helm chart for deploying the My App application
+# Additional metadata fields (optional)
+appVersion: 1.0.0
+keywords:
+  - my-app
+  - helm
+maintainers:
+  - name: Your Name
+    email: your@email.com
