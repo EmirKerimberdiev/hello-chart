@@ -4,7 +4,7 @@ on:
     paths:
       - '**/Chart.yaml'
       - '**/values.yaml'
-      - '**/templates/**'
+      - '**/k8s/**'
       - '.github/workflows/helm.yaml'
 jobs:
   lint-chart:
