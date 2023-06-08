@@ -1,21 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.name }}
-  namespace: hello-chart
+  name: app-deploy
+  namespace: argo1
+  labels:
+    app: nginx-app
 spec:
-  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ .Values.name }}
+      app: nginx-app
+  replicas: 4
   template:
     metadata:
       labels:
-        app: {{ .Values.name }}
+        app: nginx-app
     spec:
       containers:
-        - name: {{ .Values.name }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+        - name: nginx-app-john
+          image: kemir/myapp:v2
           ports:
             - containerPort: 8080
